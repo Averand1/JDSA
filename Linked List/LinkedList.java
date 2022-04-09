@@ -36,6 +36,7 @@ public class LinkedList {
 
             //Once last.next is null
             last.next = new_node;
+            //
         }
 
         return list;
