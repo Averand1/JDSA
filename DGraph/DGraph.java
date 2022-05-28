@@ -2,7 +2,7 @@ package DGraph;
 import java.util.*;
 
 public class DGraph {
-    private LinkedList<Integer> adjlist[];
+    private LinkedList<Integer> adjlist[]; 
     private boolean visited[];
 
     DGraph(int vertices) {
