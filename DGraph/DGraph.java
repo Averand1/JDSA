@@ -5,6 +5,7 @@ public class DGraph {
     private LinkedList<Integer> adjlist[]; 
     private boolean visited[];
 
+    @SuppressWarnings("unchecked")
     DGraph(int vertices) {
         adjlist = new LinkedList[vertices];
         visited = new boolean[vertices];
