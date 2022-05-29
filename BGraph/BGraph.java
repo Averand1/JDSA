@@ -1,10 +1,12 @@
 package BGraph;
 import java.util.*;
 
+
 public class BGraph {
-    private LinkedList adj[];
+    private LinkedList<Integer> adj[];
     private int V;
 
+    @SuppressWarnings("unchecked")
     BGraph(int v) {
         V = v;
         adj = new LinkedList[V];
@@ -13,7 +15,7 @@ public class BGraph {
         }
     }
 
-    @SuppressWarnings("unchecked")
+    
     void addEdge(int v, int w) {
         adj[v].add(w);
     }
