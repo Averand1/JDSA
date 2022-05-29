@@ -1,5 +1,4 @@
 package DoublyLinkedList;
-import java.util.Iterator;
 
 public class DoublyLinkedList <T> implements Iterable <T> {
 
@@ -8,7 +7,7 @@ public class DoublyLinkedList <T> implements Iterable <T> {
     private Node <T> tail = null;
 
     //Node class to represent data
-    private class Node <T> {
+    private class Node<T> {
         T data;
         Node <T> prev, next;
         public String item;
