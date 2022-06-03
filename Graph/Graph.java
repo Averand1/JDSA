@@ -1,8 +1,11 @@
+package Graph;
+
 import java.util.*;
 
 //To store edges of weighted graph
 class Edge {
     int src, dest, weight;
+
     Edge(int src, int dest, int weight) {
         this.src = src;
         this.dest = dest;
@@ -10,10 +13,11 @@ class Edge {
     }
 }
 
-//Graph class
+// Graph class
 class Graph {
     static class Node {
         int value, weight;
+
         Node(int value, int weight) {
             this.value = value;
             this.weight = weight;
@@ -22,18 +26,17 @@ class Graph {
 
     List<List<Node>> adj_list = new ArrayList<>();
 
-    //Graph Constructor
+    // Graph Constructor
     public Graph(List<Edge> edges) {
 
-        //adjacenvy matrix memory allocation
-        for(int i=0; i<edges.size(); i++) {
+        // adjacenvy matrix memory allocation
+        for (int i = 0; i < edges.size(); i++) {
             adj_list.add(i, new ArrayList<>());
         }
 
-
-        //add edges to graph
-        for(Edge e: edges) {
-            //allocating new in node in adj from src to dest
+        // add edges to graph
+        for (Edge e : edges) {
+            // allocating new in node in adj from src to dest
             adj_list.get(e.src).add(new Node(e.dest, e.weight));
         }
     }
@@ -43,26 +46,26 @@ class Graph {
         int list_size = graph.adj_list.size();
 
         System.out.println("Contents of graph");
-        while(src_vertex<list_size) {
-            //Traverse through the adjanceny list and print the edges
-            for(Node edge: graph.adj_list.get(src_vertex)) {
-                System.out.println("Vertex " + src_vertex + " ===>  " + edge.value + " ("+edge.weight+")\t");
+        while (src_vertex < list_size) {
+            // Traverse through the adjanceny list and print the edges
+            for (Node edge : graph.adj_list.get(src_vertex)) {
+                System.out.println("Vertex " + src_vertex + " ===>  " + edge.value + " (" + edge.weight + ")\t");
             }
             System.out.println();
             src_vertex++;
         }
     }
 
-public static void main(String[] args) {
-    // define edges of the graph 
-    List<Edge> edges = Arrays.asList(new Edge(0, 1, 2),new Edge(0, 2, 4),
-    new Edge(1, 2, 4),new Edge(2, 0, 5), new Edge(2, 1, 4),
-    new Edge(3, 2, 3), new Edge(4, 5, 1),new Edge(5, 4, 3));
+    public static void main(String[] args) {
+        // define edges of the graph
+        List<Edge> edges = Arrays.asList(new Edge(0, 1, 2), new Edge(0, 2, 4),
+                new Edge(1, 2, 4), new Edge(2, 0, 5), new Edge(2, 1, 4),
+                new Edge(3, 2, 3), new Edge(4, 5, 1), new Edge(5, 4, 3));
 
-    // call graph class Constructor to construct a graph
-    Graph graph = new Graph(edges);
+        // call graph class Constructor to construct a graph
+        Graph graph = new Graph(edges);
 
-// print the graph as an adjacency list
-    Graph.PrintGraph(graph);
+        // print the graph as an adjacency list
+        Graph.PrintGraph(graph);
     }
 }
